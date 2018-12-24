@@ -1,0 +1,150 @@
+/* Taken from: https://raw.githubusercontent.com/Corban987/OpenHab-Weather-Widget-12345/master/weather12345/css/weather12345.css */
+body {
+	font-size: 14px;
+	font-family: Helvetica, sans-serif;
+}
+
+.vertical-center {
+    display: inline-block;
+    vertical-align: middle !important;
+    float: none;
+}
+.vertical-top {
+    display: inline-block;
+    vertical-align: top !important;
+    float: none;
+}
+.vertical-bottom {
+    display: inline-block;
+    vertical-align: bottom  !important;
+    float: none;
+}
+.horizontalrule {
+    border-top: 1px solid #ccc;
+}
+.verticalrule {
+    border-left: 1px solid #ccc;
+}
+.date-time {
+    font-style: normal;
+    font-size: 1.25vw;
+    color: #33ccff;
+}
+.weather-icon {
+    width: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+}        
+.weather-icon-row {
+    width: 80%;
+    padding-right: 1px;
+    padding-left: 1px;
+}    
+.weather-icon-column {
+    width: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+}    
+.weather-location {
+    white-space: nowrap;
+    font-style: normal;
+    font-size: 1.25vw;
+    color: #ff9900;
+}
+.weather-table {
+    padding-left: 5px;
+    padding-right: 5px;   
+}
+.weather-current-details {
+    font-size: .54vw;    
+}
+.weather-current-details-row {
+    font-size: .6vw;    
+}
+.weather-forecast-day {      
+    font-size: .65vw;
+    color: #ff9900;
+} 
+.weather-forecast {     
+    font-style: italic; 
+    font-size: .6vw;
+    color: #368dff;
+}
+.weather-forecast img {        
+    padding-left: 1px;
+    padding-right: 1px;   
+    width: 100%;
+}
+.weather-forecast-row {     
+    font-style: italic; 
+    font-size: .6vw;
+    color: #368dff;
+}
+.weather-forecast-row img {        
+    padding-left: 1px;
+    padding-right: 1px;   
+    width: 65%;
+}
+.weather-forecast-column {     
+    font-style: italic; 
+    font-size: .6vw;
+    color: #368dff;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+.weather-forecast-column img {        
+    padding-left: 1px;
+    padding-right: 1px;   
+    width: 100%;
+}
+.temps {
+    font-size: .6vw;
+    color: #FFFFFF;
+}
+.temp-current {
+    font-size: .8vw;
+    color: #FFFFFF;
+    padding-top: 4px;
+}
+.temp-current-column {
+    padding-top: 1px;
+}
+.temp-max {
+    color: #ff5050;
+}
+.temp-min {
+    color: #33ccff;
+}
+.weather-current-feel {
+    font-style: italic;
+    font-size: 1.0vw;
+    color: #FFFFFF;
+    padding-bottom:2px;
+    padding-top: 2px;
+}
+.weather-current-temp {
+    font-style: italic;
+    font-size: 1.1vw;
+    color: #FFFFFF;
+    padding-bottom:2px;
+    padding-top: 4px;
+}
+@keyframes pulse_animation {
+	0% { transform: scale(1); }
+	10% { transform: scale(1.03); }
+	20% { transform: scale(1); }
+	30% { transform: scale(1); }
+	40% { transform: scale(1.08); }
+	50% { transform: scale(1); }
+	60% { transform: scale(1); }
+	70% { transform: scale(1.05); }
+	80% { transform: scale(1); }
+	90% { transform: scale(1.08); }
+	100% { transform: scale(1); }
+}
+.pulse {
+	animation-name: pulse_animation;
+	animation-duration: 10000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
