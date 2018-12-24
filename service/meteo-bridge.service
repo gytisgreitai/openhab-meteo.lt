@@ -1,0 +1,15 @@
+[Unit]
+Description=Meteo.lt http bridge
+After=syslog.target
+
+[Service]
+Type=simple
+User=gytis
+Group=gytis
+WorkingDirectory=/opt/openhab-meteo.lt/service
+ExecStart=/usr/bin/python3 /opt/openhab-meteo.lt/service/service.py
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
