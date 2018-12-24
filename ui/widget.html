@@ -1,0 +1,199 @@
+<div class="container-fluid">
+  <div ng-init="forecastDays= [1,2,3,4,5,6]">
+    <link rel="stylesheet" type="text/css" ng-href="{{config.serverPath}}/css/meteo-lt.css" />
+
+    <div ng-if="config.selectedLayout === 'row'">
+      <div class="row">        
+        <div class="row">
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="text-left weather-location">
+                  {{itemValue('MeteoWeather_Location')}}
+                </div>
+                <div class="weather-current-temp">{{itemValue('MeteoWeather_Temp')}} °C</div>     
+                <div class="weather-current-feel">Feels {{itemValue('MeteoWeather_FeelsLike')}} °C</div>   
+                <div class="temp-current text-center weather-current-details">
+                  <span class="temp-max">{{itemValue('MeteoWeather_0_HighTemp')}}</span><span> | </span><span class="temp-min">{{itemValue('MeteoWeather_0_LowTemp') || ''}} </span><span> °C</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <img class="weather-icon-row pulse" ng-src="{{config.serverPath}}/icons/{{itemValue('MeteoWeather_Icon')}}.svg"/>
+            <div>{{itemValue('MeteoWeather_Condition')}}</div>
+          </div>
+          <div class="col-xs-1"> 
+            <div class="row">
+              &nbsp;
+            </div>
+            <div class="row">
+              &nbsp;
+            </div>
+            <div class="row">
+              <div class="text-center weather-current-details-row">Precip: {{itemValue('MeteoWeather_Precip') }} mm</div>
+       
+            </div>
+            <div class="row">  
+              <div class="text-center weather-current-details-row">Wind: {{itemValue('MeteoWeather_Wind')}} m/s</div>
+            </div>
+          </div>
+          <div class="col-xs-7">
+            <div class="row">
+              <div ng-repeat="id in forecastDays" class="col-xs-2 weather-forecast-day weather-table verticalrule">
+                {{itemValue('MeteoWeather_' + id +'_WeekDay')}}
+              </div>
+            </div>
+            <div class="row">
+              <div ng-repeat="id in forecastDays" class="col-xs-2 weather-forecast-row weather-table verticalrule">
+                <img ng-src="{{config.serverPath}}/icons/{{itemValue('MeteoWeather_' + id + '_Icon')}}.svg"/>
+                <p>{{itemValue('MeteoWeather_' + id + '_Outlook')}}</p>
+              </div>
+            </div>
+            <div class="row">    
+              <div>
+                <div ng-repeat="id in forecastDays" class="col-xs-2 temps temp-max verticalrule">
+                  {{itemValue('MeteoWeather_'+ id +'_HighTemp')}}
+                  <span class="temps"> | </span>
+                  <span class="temps temp-min">{{itemValue('MeteoWeather_'+ id +'_LowTemp')}} </span>
+                  <span class="temps">°C</span>
+                </div>
+              </div>
+            </div>
+          </div>              
+        </div>
+      </div>
+    </div>  
+
+
+
+    <div ng-if="config.selectedLayout === 'block'">
+      <div class="row">
+        <div class="col-xs-4">
+          <div>&nbsp;</div>  
+          <div class="text-left weather-location">
+            {{itemValue('MeteoWeather_Location')}}
+          </div>
+          <div>
+            &nbsp;
+          </div>  
+          <div class="weather-current-temp">{{itemValue('MeteoWeather_Temp')}} °C</div>     
+          <div class="weather-current-feel">Feels {{itemValue('MeteoWeather_FeelsLike')}} °C</div>  
+        </div>
+        <div class="col-xs-5">
+          <div class="big-box pulse" >
+            <img class="weather-icon" src="{{config.serverPath}}/icons/{{itemValue('MeteoWeather_Icon')}}.svg"/>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div>
+            &nbsp;
+          </div>  
+          <div>
+            &nbsp;
+          </div>  
+          <div class="text-right weather-current-details">Precip: {{itemValue('MeteoWeather_Precip') }} mm</div>
+
+          <div class="text-right weather-current-details">
+            Wind: {{itemValue('MeteoWeather_Wind')}} m/s
+          </div>
+          <div class="temp-current text-right weather-current-details">
+            <span class="temp-max">{{itemValue('MeteoWeather_0_HighTemp')}}</span><span> | </span><span class="temp-min">{{itemValue('MeteoWeather_0_LowTemp')}} </span><span>°C</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-1">
+        </div>
+        <div class="col-xs-10">
+          <div class="text-center">{{itemValue('MeteoWeather_Condition')}}</div>
+        </div>
+        <div class="col-xs-1">
+        </div>
+      </div>
+      <div class="row">
+        &nbsp;
+      </div>
+      <div class="row">
+        <div ng-repeat="id in forecastDays" class="col-xs-2 weather-forecast-day weather-table">
+          {{itemValue('MeteoWeather_'+id+'_WeekDay')}}
+        </div>
+      </div>	
+      <div class="row">
+        <div ng-repeat="id in forecastDays" class="col-xs-2 weather-forecast weather-table">
+          <img ng-src="{{config.serverPath}}/icons/{{itemValue('MeteoWeather_'+id+'_Icon')}}.svg"/>
+          <p>{{itemValue('MeteoWeather_'+id+'_Outlook')}}</p>
+        </div>
+      </div>
+      <div class="row">    
+        <div >
+          <div ng-repeat="id in forecastDays" class="col-xs-2 temps temp-max">
+            {{itemValue('MeteoWeather_'+id+'_HighTemp')}}
+            <span class="temps"> | </span>
+            <span class="temps temp-min">{{itemValue('MeteoWeather_'+id+'_LowTemp')}} </span>
+            <span class="temps">°C</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div ng-if="config.selectedLayout === 'column'">
+      <div class="row">       
+        <div class="col-xs-12">
+          <div class="text-left weather-location">{{itemValue('MeteoWeather_Location')}}</div>
+        </div>
+      </div>
+      <div class="row horizontalrule">
+        <div class="col-xs-12">
+          <div class="weather-current-temp">{{itemValue('MeteoWeather_Temp')}} °C</div>  
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="weather-current-feel">Feels {{itemValue('MeteoWeather_FeelsLike')}} °C</div>   
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img class="weather-icon pulse" ng-src="{{config.serverPath}}/icons/{{itemValue('MeteoWeather_Icon')}}.svg"/>   
+          <div>{{itemValue('MeteoWeather_Condition') }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-left weather-current-details">Precip: {{itemValue('MeteoWeather_Precip') }} mm</div>
+      </div>
+      <div class="row">
+        <div ng-show="selectedUnits == 'celcius'" class="text-left weather-current-details">Wind: {{itemValue('MeteoWeather_Wind') }} m/s</div>
+      </div>
+      <div class="row">
+        <div>
+          <div class="temp-current temp-current-column text-left weather-current-details">
+            <span class="temp-max">{{itemValue('MeteoWeather_0_HighTemp')}}</span><span> | </span><span class="temp-min">{{itemValue('MeteoWeather_0_LowTemp')}} </span><span>°C</span>
+          </div>    
+        </div>        
+      </div>
+
+      <div ng-repeat="id in forecastDays">
+        <div class="row horizontalrule">
+          <div class="col-xs-12 weather-forecast-day weather-table">{{itemValue('MeteoWeather_'+ id + '_WeekDay')}}</div>
+        </div>
+        
+        <div class="row">
+          <div class="col-xs-6 weather-forecast-column weather-table">
+            <img ng-src="{{config.serverPath}}/icons/{{itemValue('MeteoWeather_'+ id + '_Icon')}}.svg"/>
+          </div>  
+          <div class="col-xs-6 weather-forecast-column temps">
+            {{itemValue('MeteoWeather_'+ id + '_Outlook')}}<br/>
+            <span class="temps temp-max"> {{itemValue('MeteoWeather_'+ id + '_HighTemp')}}</span>
+            <span class="temps"> | </span>
+            <span class="temps temp-min">{{itemValue('MeteoWeather_'+ id + '_LowTemp')}} </span>
+            <span class="temps">°C</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
