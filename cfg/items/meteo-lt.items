@@ -1,0 +1,74 @@
+// Inspiration from https://github.com/Corban987/OpenHab-Weather-Widget-12345
+
+String   MeteoWeather_Location       "Location [%s]"                    { http="<[meteoWeather:100000:JSONPATH($.location)]" } 
+Number   MeteoWeather_Temp           "Temp [%.0f °C]"                   { http="<[meteoWeather:100000:JSONPATH($.temperature)]" } 
+String   MeteoWeather_Condition      "Condition [%s]"                   { http="<[meteoWeather:100000:JSONPATH($.condition)]" }
+String   MeteoWeather_Icon           "Icon [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.icon)]" }
+Number   MeteoWeather_FeelsLike      "Feels like [%.0f °C]"             { http="<[meteoWeather:100000:JSONPATH($.feelsLike)]" }
+Number   MeteoWeather_Humidity       "Humidity [%d%%]"                  { http="<[meteoWeather:100000:JSONPATH($.humidity)]" }
+Number   MeteoWeather_Wind           "Wind Speed [%.0f m/s]"            { http="<[meteoWeather:100000:JSONPATH($.wind)]" }
+Number   MeteoWeather_WindDirection  "Wind Direction [%d]"              { http="<[meteoWeather:100000:JSONPATH($.windDirection)]" }
+Number   MeteoWeather_Precip         "Precipitation [%.1f mm]"          { http="<[meteoWeather:100000:JSONPATH($.precipitation)]" }
+
+String   MeteoWeather_0_Date           "Date [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[0].shortDate)]" } 
+String   MeteoWeather_0_WeekDay        "Day [%s]"                         { http="<[meteoWeather:100000:JSONPATH($.forecastDays[0].shortDay)]" } 
+String   MeteoWeather_0_Outlook        "Outlook [%s]"                     { http="<[meteoWeather:100000:JSONPATH($.forecastDays[0].outLook)]" } 
+String   MeteoWeather_0_Icon           "Icon [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[0].icon)]" } 
+Number   MeteoWeather_0_LowTemp        "Low temp [%.0f °C]"               { http="<[meteoWeather:100000:JSONPATH($.forecastDays[0].lowTemperature)]" } 
+Number   MeteoWeather_0_HighTemp       "High temp [%.0f °C]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[0].highTemperature)]" } 
+Number   MeteoWeather_0_Wind           "Wind Speed [%.0f m/s]"            { http="<[meteoWeather:100000:JSONPATH($.forecastDays[0].windSpeed)]" }
+Number   MeteoWeather_0_WindDirection  "Wind Direction [%d]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[0].windDirection)]" }
+
+String   MeteoWeather_1_Date           "Date [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[1].shortDate)]" } 
+String   MeteoWeather_1_WeekDay        "Day [%s]"                         { http="<[meteoWeather:100000:JSONPATH($.forecastDays[1].shortDay)]" } 
+String   MeteoWeather_1_Outlook        "Outlook [%s]"                     { http="<[meteoWeather:100000:JSONPATH($.forecastDays[1].outLook)]" } 
+String   MeteoWeather_1_Icon           "Icon [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[1].icon)]" } 
+Number   MeteoWeather_1_LowTemp        "Low temp [%.0f °C]"               { http="<[meteoWeather:100000:JSONPATH($.forecastDays[1].lowTemperature)]" } 
+Number   MeteoWeather_1_HighTemp       "High temp [%.0f °C]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[1].highTemperature)]" } 
+Number   MeteoWeather_1_Wind           "Wind Speed [%.0f m/s]"            { http="<[meteoWeather:100000:JSONPATH($.forecastDays[1].windSpeed)]" }
+Number   MeteoWeather_1_WindDirection  "Wind Direction [%d]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[1].windDirection)]" }
+
+String   MeteoWeather_2_Date           "Date [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[2].shortDate)]" } 
+String   MeteoWeather_2_WeekDay        "Day [%s]"                         { http="<[meteoWeather:100000:JSONPATH($.forecastDays[2].shortDay)]" } 
+String   MeteoWeather_2_Outlook        "Outlook [%s]"                     { http="<[meteoWeather:100000:JSONPATH($.forecastDays[2].outLook)]" } 
+String   MeteoWeather_2_Icon           "Icon [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[2].icon)]" } 
+Number   MeteoWeather_2_LowTemp        "Low temp [%.0f °C]"               { http="<[meteoWeather:100000:JSONPATH($.forecastDays[2].lowTemperature)]" } 
+Number   MeteoWeather_2_HighTemp       "High temp [%.0f °C]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[2].highTemperature)]" } 
+Number   MeteoWeather_2_Wind           "Wind Speed [%.0f m/s]"            { http="<[meteoWeather:100000:JSONPATH($.forecastDays[2].windSpeed)]" }
+Number   MeteoWeather_2_WindDirection  "Wind Direction [%d]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[2].windDirection)]" }
+
+String   MeteoWeather_3_Date           "Date [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[3].shortDate)]" } 
+String   MeteoWeather_3_WeekDay        "Day [%s]"                         { http="<[meteoWeather:100000:JSONPATH($.forecastDays[3].shortDay)]" } 
+String   MeteoWeather_3_Outlook        "Outlook [%s]"                     { http="<[meteoWeather:100000:JSONPATH($.forecastDays[3].outLook)]" } 
+String   MeteoWeather_3_Icon           "Icon [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[3].icon)]" } 
+Number   MeteoWeather_3_LowTemp        "Low temp [%.0f °C]"               { http="<[meteoWeather:100000:JSONPATH($.forecastDays[3].lowTemperature)]" } 
+Number   MeteoWeather_3_HighTemp       "High temp [%.0f °C]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[3].highTemperature)]" } 
+Number   MeteoWeather_3_Wind           "Wind Speed [%.0f m/s]"            { http="<[meteoWeather:100000:JSONPATH($.forecastDays[3].windSpeed)]" }
+Number   MeteoWeather_3_WindDirection  "Wind Direction [%d]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[3].windDirection)]" }
+
+String   MeteoWeather_4_Date           "Date [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[4].shortDate)]" } 
+String   MeteoWeather_4_WeekDay        "Day [%s]"                         { http="<[meteoWeather:100000:JSONPATH($.forecastDays[4].shortDay)]" } 
+String   MeteoWeather_4_Outlook        "Outlook [%s]"                     { http="<[meteoWeather:100000:JSONPATH($.forecastDays[4].outLook)]" } 
+String   MeteoWeather_4_Icon           "Icon [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[4].icon)]" } 
+Number   MeteoWeather_4_LowTemp        "Low temp [%.0f °C]"               { http="<[meteoWeather:100000:JSONPATH($.forecastDays[4].lowTemperature)]" } 
+Number   MeteoWeather_4_HighTemp       "High temp [%.0f °C]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[4].highTemperature)]" } 
+Number   MeteoWeather_4_Wind           "Wind Speed [%.0f m/s]"            { http="<[meteoWeather:100000:JSONPATH($.forecastDays[4].windSpeed)]" }
+Number   MeteoWeather_4_WindDirection  "Wind Direction [%d]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[4].windDirection)]" }
+
+String   MeteoWeather_5_Date           "Date [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[5].shortDate)]" } 
+String   MeteoWeather_5_WeekDay        "Day [%s]"                         { http="<[meteoWeather:100000:JSONPATH($.forecastDays[5].shortDay)]" } 
+String   MeteoWeather_5_Outlook        "Outlook [%s]"                     { http="<[meteoWeather:100000:JSONPATH($.forecastDays[5].outLook)]" } 
+String   MeteoWeather_5_Icon           "Icon [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[5].icon)]" } 
+Number   MeteoWeather_5_LowTemp        "Low temp [%.0f °C]"               { http="<[meteoWeather:100000:JSONPATH($.forecastDays[5].lowTemperature)]" } 
+Number   MeteoWeather_5_HighTemp       "High temp [%.0f °C]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[5].highTemperature)]" } 
+Number   MeteoWeather_5_Wind           "Wind Speed [%.0f m/s]"            { http="<[meteoWeather:100000:JSONPATH($.forecastDays[5].windSpeed)]" }
+Number   MeteoWeather_5_WindDirection  "Wind Direction [%d]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[5].windDirection)]" }
+
+String   MeteoWeather_6_Date           "Date [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[6].shortDate)]" } 
+String   MeteoWeather_6_WeekDay        "Day [%s]"                         { http="<[meteoWeather:100000:JSONPATH($.forecastDays[6].shortDay)]" } 
+String   MeteoWeather_6_Outlook        "Outlook [%s]"                     { http="<[meteoWeather:100000:JSONPATH($.forecastDays[6].outLook)]" } 
+String   MeteoWeather_6_Icon           "Icon [%s]"                        { http="<[meteoWeather:100000:JSONPATH($.forecastDays[6].icon)]" } 
+Number   MeteoWeather_6_LowTemp        "Low temp [%.0f °C]"               { http="<[meteoWeather:100000:JSONPATH($.forecastDays[6].lowTemperature)]" } 
+Number   MeteoWeather_6_HighTemp       "High temp [%.0f °C]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[6].highTemperature)]" } 
+Number   MeteoWeather_6_Wind           "Wind Speed [%.0f m/s]"            { http="<[meteoWeather:100000:JSONPATH($.forecastDays[6].windSpeed)]" }
+Number   MeteoWeather_6_WindDirection  "Wind Direction [%d]"              { http="<[meteoWeather:100000:JSONPATH($.forecastDays[6].windDirection)]" }
