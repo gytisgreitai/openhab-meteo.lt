@@ -253,6 +253,7 @@ def getData(locid, lang):
     except:
       data['outlook'] = ''
       data['weathercode'] = 'na'
+      data['icon'] = ''
     
     try:
       data['lowTemperature'] = col[0].find_all('span', class_='big')[0].string.split(' ')[0]
